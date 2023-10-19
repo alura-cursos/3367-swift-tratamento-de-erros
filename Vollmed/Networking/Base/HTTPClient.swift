@@ -57,9 +57,7 @@ extension HTTPClient {
                 return .success(decodedResponse)
             case 400:
                 let errorResponse = try? JSONSerialization.jsonObject(with: data) as? [String: Any]
-                print(errorResponse)
-                
-                return .failure(.invalidURL)
+                return .failure(.custom(error: errorResponse))
             case 401:
                 return .failure(.unauthorized)
                 
