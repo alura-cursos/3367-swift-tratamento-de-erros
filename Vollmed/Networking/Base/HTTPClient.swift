@@ -14,13 +14,17 @@ protocol HTTPClient {
 extension HTTPClient {
     func sendRequest<T: Decodable>(endpoint: Endpoint, responseModel: T.Type?) async -> Result<T?, RequestError> {
         
-        var urlComponents = URLComponents()
-        urlComponents.scheme = endpoint.scheme
-        urlComponents.host = endpoint.host
-        urlComponents.path = endpoint.path
-        urlComponents.port = 3000
+//        var urlComponents = URLComponents()
+//        urlComponents.scheme = endpoint.scheme
+//        urlComponents.host = endpoint.host
+//        urlComponents.path = endpoint.path
+//        urlComponents.port = 3000
         
-        guard let url = urlComponents.url else {
+//        guard let url = urlComponents.url else {
+//            return .failure(.invalidURL)
+//        }
+        
+        guard let url = URL(string: "https://private-854ce4-vollmedapierros.apiary-mock.com/specialists") else {
             return .failure(.invalidURL)
         }
         
@@ -51,6 +55,11 @@ extension HTTPClient {
                 }
                 
                 return .success(decodedResponse)
+            case 400:
+                let errorResponse = try? JSONSerialization.jsonObject(with: data) as? [String: Any]
+                print(errorResponse)
+                
+                return .failure(.invalidURL)
             case 401:
                 return .failure(.unauthorized)
                 
