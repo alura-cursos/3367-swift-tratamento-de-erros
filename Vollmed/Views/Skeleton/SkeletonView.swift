@@ -9,6 +9,19 @@ import SwiftUI
 
 struct SkeletonView: View {
     var body: some View {
+        VStack {
+            ForEach(0..<4, id: \.self) { index in
+                SkeletonRow()
+            }
+        }
+    }
+}
+
+struct SkeletonRow: View {
+    
+    private var placeholderString = "********************************"
+    
+    var body: some View {
         VStack(alignment: .leading) {
             HStack(spacing: 16) {
                 LinearGradient(gradient: Gradient(colors: [.gray, .white, .gray]), startPoint: .leading, endPoint: .trailing)
@@ -17,6 +30,20 @@ struct SkeletonView: View {
                             .frame(width: 60, height: 60, alignment: .leading)
                     )
                     .frame(width: 60, height: 60)
+                
+                VStack(alignment: .leading, spacing: 8.0) {
+                    LinearGradient(gradient: Gradient(colors: [.gray, .white, .gray]), startPoint: .leading, endPoint: .trailing)
+                        .mask(
+                            Text(placeholderString)
+                                .redacted(reason: .placeholder)
+                        )
+                    
+                    LinearGradient(gradient: Gradient(colors: [.gray, .white, .gray]), startPoint: .leading, endPoint: .trailing)
+                        .mask(
+                            Text(placeholderString)
+                                .redacted(reason: .placeholder)
+                        )
+                }
             }
         }
     }
