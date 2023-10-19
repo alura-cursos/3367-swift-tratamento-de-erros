@@ -15,6 +15,7 @@ struct HomeView: View {
     
     @State private var specialists: [Specialist] = []
     @State private var isShowingSnackBar = false
+    @State private var isFetchingData = true
     @State private var errorMessage = ""
     
     var body: some View {
@@ -36,9 +37,14 @@ struct HomeView: View {
                         .foregroundColor(.accentColor)
                         .multilineTextAlignment(.center)
                         .padding(.vertical, 16)
-                    ForEach(specialists) { specialist in
-                        SpecialistCardView(specialist: specialist)
-                            .padding(.bottom, 8)
+                    
+                    if isFetchingData {
+                        SkeletonView()
+                    } else {
+                        ForEach(specialists) { specialist in
+                            SpecialistCardView(specialist: specialist)
+                                .padding(.bottom, 8)
+                        }
                     }
                 }
                 .padding(.horizontal)
@@ -47,6 +53,7 @@ struct HomeView: View {
             .onAppear {
                 Task {
                     do {
+                        sleep(4)
                         guard let response = try await viewModel.getSpecialists() else { return }
                         self.specialists = response
                     } catch {
