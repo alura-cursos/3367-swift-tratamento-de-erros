@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SkeletonView: View {
     var body: some View {
-        VStack {
+        VStack(spacing: 35) {
             ForEach(0..<4, id: \.self) { index in
                 SkeletonRow()
             }
@@ -28,6 +28,7 @@ struct SkeletonRow: View {
                     .mask(
                         Circle()
                             .frame(width: 60, height: 60, alignment: .leading)
+                            .redactedAnimation()
                     )
                     .frame(width: 60, height: 60)
                 
@@ -36,12 +37,14 @@ struct SkeletonRow: View {
                         .mask(
                             Text(placeholderString)
                                 .redacted(reason: .placeholder)
+                                .redactedAnimation()
                         )
                     
                     LinearGradient(gradient: Gradient(colors: [.gray, .white, .gray]), startPoint: .leading, endPoint: .trailing)
                         .mask(
                             Text(placeholderString)
                                 .redacted(reason: .placeholder)
+                                .redactedAnimation()
                         )
                 }
             }

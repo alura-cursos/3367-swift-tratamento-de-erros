@@ -53,9 +53,9 @@ struct HomeView: View {
             .onAppear {
                 Task {
                     do {
-                        sleep(4)
                         guard let response = try await viewModel.getSpecialists() else { return }
                         self.specialists = response
+                        isFetchingData = false
                     } catch {
                         isShowingSnackBar = true
                         let errorType = error as? RequestError

@@ -10,6 +10,7 @@
 		183B3B002AD98EEB009AF2B1 /* SnackBarErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183B3AFF2AD98EEB009AF2B1 /* SnackBarErrorView.swift */; };
 		183B3B022AD9B785009AF2B1 /* UIAplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183B3B012AD9B785009AF2B1 /* UIAplication+.swift */; };
 		183B3B052AD9C451009AF2B1 /* SkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183B3B042AD9C451009AF2B1 /* SkeletonView.swift */; };
+		183B3B072AD9CD5A009AF2B1 /* RedactedAnimationModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183B3B062AD9CD5A009AF2B1 /* RedactedAnimationModifier.swift */; };
 		18D21FC42AD0AAFE00AE9B81 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D21FC02AD0AAFE00AE9B81 /* HTTPClient.swift */; };
 		18D21FC52AD0AAFE00AE9B81 /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D21FC12AD0AAFE00AE9B81 /* RequestMethod.swift */; };
 		18D21FC62AD0AAFE00AE9B81 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D21FC22AD0AAFE00AE9B81 /* RequestError.swift */; };
@@ -48,6 +49,7 @@
 		183B3AFF2AD98EEB009AF2B1 /* SnackBarErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackBarErrorView.swift; sourceTree = "<group>"; };
 		183B3B012AD9B785009AF2B1 /* UIAplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAplication+.swift"; sourceTree = "<group>"; };
 		183B3B042AD9C451009AF2B1 /* SkeletonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonView.swift; sourceTree = "<group>"; };
+		183B3B062AD9CD5A009AF2B1 /* RedactedAnimationModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedactedAnimationModifier.swift; sourceTree = "<group>"; };
 		18D21FC02AD0AAFE00AE9B81 /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		18D21FC12AD0AAFE00AE9B81 /* RequestMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
 		18D21FC22AD0AAFE00AE9B81 /* RequestError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				488A6A122AB8FB3D003A2CAD /* Date+.swift */,
 				488A6A142AB8FB86003A2CAD /* String+.swift */,
 				183B3B012AD9B785009AF2B1 /* UIAplication+.swift */,
+				183B3B062AD9CD5A009AF2B1 /* RedactedAnimationModifier.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				488A6A152AB8FB86003A2CAD /* String+.swift in Sources */,
 				484BEF052AB0F7970033C07A /* HomeView.swift in Sources */,
 				18D21FD12AD1959800AE9B81 /* AuthenticationService.swift in Sources */,
+				183B3B072AD9CD5A009AF2B1 /* RedactedAnimationModifier.swift in Sources */,
 				488A6A1D2AB91386003A2CAD /* CancelAppointmentView.swift in Sources */,
 				488A6A2E2AB93514003A2CAD /* AuthenticationManager.swift in Sources */,
 				183B3B002AD98EEB009AF2B1 /* SnackBarErrorView.swift in Sources */,
