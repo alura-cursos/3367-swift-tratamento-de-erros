@@ -21,6 +21,12 @@ enum RequestError: Error {
             return "erro de decodificação"
         case .unauthorized:
             return "sessão expirada"
+        case .custom(let errorData):
+            if let jsonError = errorData?["error"] as? [String: Any] {
+                let message = jsonError["message"] as? String ?? ""
+                return message
+            }
+            return "Ops! Ocorreu um erro ao carregar as informações"
         default:
             return "erro desconhecido"
         }

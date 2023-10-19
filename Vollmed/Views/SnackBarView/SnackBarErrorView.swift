@@ -14,6 +14,7 @@ struct SnackBarErrorView: View {
     
     var body: some View {
         VStack {
+            Spacer()
             if isShowing {
                 Text(message)
                     .padding()
